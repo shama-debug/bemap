@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>サービスとWi-Fi製品の切り替え</title>
+  <style>
+    .content {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="toggleContent()">切り替え</button>
+
+  <div id="service" class="content active">
+    <h2>サービス</h2>
+    <p>こちらはサービスの説明です。</p>
+  </div>
+
+  <div id="wifi" class="content">
+    <h2>Wi-Fi製品</h2>
+    <p>こちらはWi-Fi製品の説明です。</p>
+  </div>
+
+  <script>
+    function toggleContent() {
+      const service = document.getElementById('service');
+      const wifi = document.getElementById('wifi');
+
+      if (service.classList.contains('active')) {
+        service.classList.remove('active');
+        wifi.classList.add('active');
+      } else {
+        wifi.classList.remove('active');
+        service.classList.add('active');
+      }
+    }
+  </script>
+
+</body>
+</html>
